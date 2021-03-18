@@ -438,6 +438,119 @@ def disMagic_box(code_word):
     return msg
 
 
+# Шифр двойной перестановки
+def double_mix(msg):
+    size = 0
+    i = 1
+    # msg = list('методологиянауки')
+    code_word = []
+    while size == 0:
+        if len(msg) <= i * i:
+            size = i
+        i = i + 1
+    matrix = [['' for i in range(size)] for a in range(size)]
+    col_matrix = [['' for i in range(size)] for a in range(size)]
+    row_matrix = [['' for i in range(size)] for a in range(size)]
+    k = 0
+    route = int(input('Маршрут вписывания по строкам(1), по столбцам(0): '))
+    if route == 1:
+        for i in range(size):
+            for j in range(size):
+                if k < len(alfa):
+                    matrix[i][j] = msg[k]
+                else:
+                    matrix[i][j] = '*'
+                k = k + 1
+    elif route == 0:
+        for i in range(size):
+            for j in range(size):
+                if k < len(alfa):
+                    matrix[j][i] = msg[k]
+                else:
+                    matrix[j][i] = '*'
+                k = k + 1
+    seq_column = list(input('Введите порядок перестановки столбцов: '))
+    seq_row = list(input('Введите порядок перестановки строк: '))
+    for i in range(size):
+        for j in range(size):
+            col_matrix[i][j] = matrix[i][int(seq_column[j])-1]
+
+    for i in range(size):
+        for j in range(size):
+            row_matrix[i][j] = col_matrix[int(seq_row[i])-1][j]
+
+    route_read = int(input('Маршрут считывания по строкам(1), по столбцам(0): '))
+    if route_read == 1:
+        for i in row_matrix:
+            for j in i:
+                code_word.append(j)
+    else:
+        for id_i, i in enumerate(row_matrix):
+            for id_j, j in enumerate(i):
+                code_word.append(row_matrix[id_j][id_i])
+    print('Матрица с перестановкой столбцов: ')
+    print(*col_matrix, sep='\n')
+    print('Матрица с перестановкой столбцов и строк: ')
+    print(*row_matrix, sep='\n')
+    # print(*matrix, sep='\n')
+    return code_word
+
+
+def disDouble_mix(code_word):
+    size = int(len(code_word)**(.5))
+    # msg = list('методологиянауки')
+    msg = []
+    matrix = [['' for i in range(size)] for a in range(size)]
+    col_matrix = [['' for i in range(size)] for a in range(size)]
+    row_matrix = [['' for i in range(size)] for a in range(size)]
+
+    route_read = int(input('Маршрут считывания по строкам(1), по столбцам(0): '))
+    k = 0
+    if route_read == 1:
+        for i in range(size):
+            for j in range(size):
+                if k < len(alfa):
+                    row_matrix[i][j] = code_word[k]
+                else:
+                    row_matrix[i][j] = '*'
+                k = k + 1
+    elif route_read == 0:
+        for i in range(size):
+            for j in range(size):
+                if k < len(alfa):
+                    row_matrix[j][i] = code_word[k]
+                else:
+                    row_matrix[j][i] = '*'
+                k = k + 1
+
+    seq_row = list(input('Введите порядок перестановки строк: '))
+    seq_column = list(input('Введите порядок перестановки столбцов: '))
+    for i in range(size):
+        for j in range(size):
+            col_matrix[int(seq_row[i])-1][j] = row_matrix[i][j]
+
+    for i in range(size):
+        for j in range(size):
+            matrix[i][int(seq_column[j])-1] = col_matrix[i][j]
+
+    route = int(input('Маршрут вписывания по строкам(1), по столбцам(0): '))
+    if route == 1:
+        for i in matrix:
+            for j in i:
+                msg.append(j)
+    else:
+        for id_i, i in enumerate(matrix):
+            for id_j, j in enumerate(i):
+                msg.append(matrix[id_j][id_i])
+
+    print('Матрица с перестановкой столбцов и строк: ')
+    print(*row_matrix, sep='\n')
+    print('Матрица с перестановкой столбцов: ')
+    print(*col_matrix, sep='\n')
+    # print(*matrix, sep='\n')
+    return msg
+
+
 # Основная часть
 if int(input('Зашировать(1) или расшифровать(0)? ')) == 1:
     msg = list(input('Введите сообщение: '))
@@ -447,6 +560,7 @@ if int(input('Зашировать(1) или расшифровать(0)? ')) ==
                         '\n[2] Полибианский квадрат'
                         '\n[3] Шифр Трисемуса'
                         '\n[4] Шифр Playfair'
+                        '\n[8] Шифр двойной перестановки'
                         '\n[9] Magic Box'
                         '\n'))
     if solver == 0:
@@ -459,6 +573,8 @@ if int(input('Зашировать(1) или расшифровать(0)? ')) ==
         print(*trisemus(alfa, msg), sep='')
     elif solver == 4:
         print(*playfair(alfa, msg), sep='')
+    elif solver == 8:
+        print(*double_mix(msg), sep='')
     elif solver == 9:
         mb = magic_box(msg)
         for _ in mb:
@@ -472,6 +588,7 @@ else:
                        '\n[2] Полибианский квадрат'
                        '\n[3] Шифр Трисемуса'
                        '\n[4] Шифр Playfair'
+                       '\n[8] Шифр двойной перестановки'
                        '\n[9] Magic Box'
                        '\n'))
     if solver == 0:
@@ -484,6 +601,8 @@ else:
         print(*disTrisemus(alfa, code_word), sep='')
     elif solver == 4:
         print(*disPlayfair(alfa, code_word), sep='')
+    elif solver == 8:
+        print(*disDouble_mix(code_word), sep='')
     elif solver == 9:
         print(*disMagic_box(code_word), sep='')
 
