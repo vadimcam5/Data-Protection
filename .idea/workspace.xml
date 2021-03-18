@@ -15,7 +15,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/DataProtection" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1otISN5J6xx1Ml32wdlNh9PYk22" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -70,9 +70,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DataProtection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Shifr (1)" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.Shifr" />
       </list>
     </recent_temporary>
@@ -95,22 +117,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="265" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615571527118" />
-    <state width="938" height="281" key="GridCell.Tab.0.bottom" timestamp="1616079631206">
+    <state width="936" height="281" key="GridCell.Tab.0.bottom" timestamp="1616106976892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616079631206" />
-    <state width="938" height="281" key="GridCell.Tab.0.center" timestamp="1616079631206">
+    <state width="936" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616106976892" />
+    <state width="936" height="281" key="GridCell.Tab.0.center" timestamp="1616106976892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616079631206" />
-    <state width="938" height="281" key="GridCell.Tab.0.left" timestamp="1616079631206">
+    <state width="936" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616106976892" />
+    <state width="936" height="281" key="GridCell.Tab.0.left" timestamp="1616106976892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616079631206" />
-    <state width="938" height="281" key="GridCell.Tab.0.right" timestamp="1616079631206">
+    <state width="936" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616106976892" />
+    <state width="936" height="281" key="GridCell.Tab.0.right" timestamp="1616106976892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616079631206" />
+    <state width="936" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616106976892" />
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1615571498698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
